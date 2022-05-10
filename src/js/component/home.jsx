@@ -5,6 +5,7 @@ export default function ToDoList() {
 	const [tarea, setTarea] = useState("");
 	const [lista, setLista] = useState([]);
 
+	//Recibe un key de toda la lista y filtra para actualizar la lista con todos los elementos menos aquel cuya key se ha pasado
 	function borrar(posicion) {
 		let listaFiltrada = lista.filter((valor, index) => {
 			return index != posicion;
@@ -30,7 +31,7 @@ export default function ToDoList() {
 			<ul>
 				{lista.map(function (valor, i) {
 					return (
-						<li key={i}>
+						<li className="mt-3" key={i}>
 							{valor}
 							<button
 								onClick={() => {
@@ -45,5 +46,3 @@ export default function ToDoList() {
 		</div>
 	);
 }
-
-//Recibe un key de toda la lista y filtra para actualizar la lista con todos los elementos menos aquel cuya key se ha pasado
